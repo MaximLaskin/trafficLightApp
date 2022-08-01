@@ -50,7 +50,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="nextButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="ljm-qZ-TRK"/>
+                                    <action selector="changeNameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="am4-Ul-lIa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,7 +66,7 @@
                     </view>
                     <connections>
                         <outlet property="greenLightViev" destination="7XJ-OU-XA3" id="uIw-ye-8fM"/>
-                        <outlet property="nextButton" destination="Q9G-bt-yeS" id="a5D-Kl-RSv"/>
+                        <outlet property="nextButton" destination="Q9G-bt-yeS" id="tkY-Ah-wge"/>
                         <outlet property="redLightViev" destination="Jy4-d2-Fdb" id="l9a-r3-3Ap"/>
                         <outlet property="yellowLightViev" destination="XZR-m9-sgw" id="o0f-Lm-wYm"/>
                     </connections>

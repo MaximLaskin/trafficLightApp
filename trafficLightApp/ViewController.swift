@@ -18,31 +18,34 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         [redLightViev, yellowLightViev, greenLightViev].forEach{ $0.alpha = 0.3 }
-                // с этой записью помог куратор)
+              
         
         redLightViev.layer.cornerRadius = redLightViev.layer.bounds.width / 2
         yellowLightViev.layer.cornerRadius = yellowLightViev.layer.bounds.width / 2
         greenLightViev.layer.cornerRadius = greenLightViev.layer.bounds.width / 2
-        //          [redLightViev, yellowLightViev, greenLightViev] = .forEach{ $0.layer.bounds.width / 2 }
-        // делал по аналогии с alpha, но компилятору не нравится деление... моя запись неправильная?
+        
+        nextButton.backgroundColor = #colorLiteral(red: 0.408438392, green: 0.5202974955, blue: 1, alpha: 1)
+        nextButton.tintColor = .white
+        nextButton.setTitle("START", for: .normal)
+        nextButton.layer.cornerRadius = 10
+        
       
-        nextButton.configuration = setupButton(with: "START")
+//        nextButton.configuration = setupButton(with: "START")
     }
+    
+    @IBAction func changeNameButton() {
+        nextButton.setTitle("NEXT", for: .normal)
+    }
+    
 
-    @IBAction func nextButtonPressed() {
-        nextButton.configuration = setupButton(with: "NEXT")
-    }
-        
-    private func setupButton(with title: String) -> UIButton.Configuration {
-        var buttonConfiguration = UIButton.Configuration.filled()
-        buttonConfiguration.baseBackgroundColor = #colorLiteral(red: 0.4034786248, green: 0.6455494493, blue: 1, alpha: 1)
-        buttonConfiguration.title = title
-        buttonConfiguration.buttonSize = .large
-        buttonConfiguration.attributedTitle?.font = UIFont.systemFont(ofSize: 30)
-        
-        
-        return buttonConfiguration
-    }
+    
+    
+   
+    
+    
+    
+
+
         
     
 
