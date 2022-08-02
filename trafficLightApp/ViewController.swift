@@ -1,11 +1,9 @@
-//
-//  ViewController.swift
-//  trafficLightApp
-//
-//  Created by Swift on 29.07.2022.
-//
-
 import UIKit
+
+
+enum LightController {
+    case red, yellow, green
+}
 
 class ViewController: UIViewController {
 
@@ -14,9 +12,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenLightViev: UIView!
     @IBOutlet weak var nextButton: UIButton!
     
-    override func viewDidLoad() {
+    private var currentLight = LightController.red
+    
+        override func viewDidLoad() {
         super.viewDidLoad()
         
+//            redLightViev.alpha = 0.3
+//            yellowLightViev.alpha = 0.3
+//            redLightViev.alpha = 0.3
         [redLightViev, yellowLightViev, greenLightViev].forEach{ $0.alpha = 0.3 }
               
         
@@ -29,28 +32,28 @@ class ViewController: UIViewController {
         nextButton.setTitle("START", for: .normal)
         nextButton.layer.cornerRadius = 10
         
-      
-//        nextButton.configuration = setupButton(with: "START")
     }
     
     @IBAction func changeNameButton() {
         nextButton.setTitle("NEXT", for: .normal)
-    }
     
-
-    
-    
-   
-    
-    
-    
-
-
-        
-    
-
-    
-    
-
+            switch currentLight {
+            case .red:
+                redLightViev.alpha = 1
+                yellowLightViev.alpha = 0.3
+                greenLightViev.alpha = 0.3
+                currentLight = .yellow
+            case .yellow:
+                redLightViev.alpha = 0.3
+                yellowLightViev.alpha = 1
+                greenLightViev.alpha = 0.3
+                currentLight = .green
+            case .green:
+                redLightViev.alpha = 0.3
+                yellowLightViev.alpha = 0.3
+                greenLightViev.alpha = 1
+                currentLight = .red
+            }
+        }
 }
 
